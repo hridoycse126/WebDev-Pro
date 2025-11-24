@@ -1129,7 +1129,7 @@
                 background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             }
         }
-
+  }
         .certificate-header {
             text-align: center;
             max-width: 720px;
@@ -2197,6 +2197,214 @@
                 padding: 26px 20px;
             }
         }
+
+/* === Courses Overview Section (below Product Offer) === */
+.courses-overview {
+    background: var(--section-alt-bg);
+    padding: 80px 0;
+}
+
+.courses-header {
+    max-width: 780px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.courses-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.courses-meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    color: var(--gray);
+}
+
+.courses-meta-pill i {
+    color: var(--primary);
+}
+
+/* Grid */
+.course-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+@media (min-width: 768px) {
+    .course-cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .course-cards-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+.course-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    padding: 22px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .course-card {
+        padding: 26px 22px;
+    }
+}
+
+.course-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.12), transparent 55%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.course-card:hover::before {
+    opacity: 1;
+}
+
+.course-card-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.course-card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    background: var(--gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    flex-shrink: 0;
+    font-size: 1.4rem;
+}
+
+.course-card-labels {
+    flex: 1;
+}
+
+.course-level-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.course-level-beginner {
+    background: rgba(56, 189, 248, 0.12);
+    color: #0369a1;
+}
+
+.course-level-intermediate {
+    background: rgba(129, 140, 248, 0.14);
+    color: #3730a3;
+}
+
+.course-level-advanced {
+    background: rgba(248, 113, 113, 0.12);
+    color: #b91c1c;
+}
+
+.course-level-career {
+    background: rgba(34, 197, 94, 0.12);
+    color: #15803d;
+}
+
+.course-card-title {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+    color: var(--text-color);
+}
+
+.course-card-subtitle {
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+/* List */
+.course-card-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 4px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.course-card-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.course-card-list i {
+    margin-top: 2px;
+    font-size: 0.9rem;
+    color: var(--secondary);
+}
+
+/* Footer */
+.course-card-footer {
+    margin-top: auto;
+    padding-top: 8px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.course-tagline {
+    font-size: 0.82rem;
+    color: var(--gray);
+}
+
+/* Small screens tweaks */
+@media (max-width: 576px) {
+    .courses-overview {
+        padding: 60px 0;
+    }
+
+    .course-card {
+        padding: 22px 18px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -2429,6 +2637,161 @@
         </div>
     </section>
 
+
+    <!-- Course Cards: Program Overview -->
+    <section class="courses-overview" id="curriculum-overview">
+        <div class="container">
+            <div class="courses-header">
+                <h2 class="section-title gradient">What You’ll Learn Inside WebDev Pro</h2>
+                <p class="section-subtitle">
+                    A structured, job-focused curriculum that takes you from absolute beginner to confident full-stack developer—designed to work beautifully on desktop, tablet, and mobile.
+                </p>
+            </div>
+
+            <div class="courses-meta-row">
+                <span class="courses-meta-pill">
+                    <i class="fas fa-signal"></i>
+                    Beginner to Job-Ready
+                </span>
+                <span class="courses-meta-pill">
+                    <i class="fas fa-clock"></i>
+                    3–6 Months, Self-Paced
+                </span>
+                <span class="courses-meta-pill">
+                    <i class="fas fa-mobile-alt"></i>
+                    Learn on Any Device
+                </span>
+            </div>
+
+            <div class="course-cards-grid">
+                <!-- Card 1 -->
+                <article class="course-card">
+                    <div class="course-card-top">
+                        <div class="course-card-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <div class="course-card-labels">
+                            <span class="course-level-badge course-level-beginner">Phase 1 • Beginner</span>
+                            <h3 class="course-card-title">Web Foundations</h3>
+                            <p class="course-card-subtitle">Build a rock-solid base with HTML, CSS & modern JavaScript.</p>
+                        </div>
+                    </div>
+                    <ul class="course-card-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Semantic HTML, modern CSS (Flexbox, Grid) & responsive layouts.
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            JavaScript essentials, DOM manipulation & browser APIs.
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            3 real-world landing pages optimised for mobile and desktop.
+                        </li>
+                    </ul>
+                    <div class="course-card-footer">
+                        <span class="course-tagline">Best for: Complete beginners & career switchers.</span>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="course-card">
+                    <div class="course-card-top">
+                        <div class="course-card-icon">
+                            <i class="fas fa-react"></i>
+                        </div>
+                        <div class="course-card-labels">
+                            <span class="course-level-badge course-level-intermediate">Phase 2 • Intermediate</span>
+                            <h3 class="course-card-title">Modern Frontend UI</h3>
+                            <p class="course-card-subtitle">Create fast, beautiful interfaces users love using React.</p>
+                        </div>
+                    </div>
+                    <ul class="course-card-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            React with hooks, context, routing & component patterns.
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            UI systems, design tokens & reusable component libraries.
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Pixel-perfect dashboards that adapt to phone, tablet & desktop.
+                        </li>
+                    </ul>
+                    <div class="course-card-footer">
+                        <span class="course-tagline">Best for: Future frontend engineers & UI-focused devs.</span>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="course-card">
+                    <div class="course-card-top">
+                        <div class="course-card-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="course-card-labels">
+                            <span class="course-level-badge course-level-advanced">Phase 3 • Advanced</span>
+                            <h3 class="course-card-title">Backend & APIs</h3>
+                            <p class="course-card-subtitle">Learn to ship secure, production-ready APIs with Node.js.</p>
+                        </div>
+                    </div>
+                    <ul class="course-card-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Node.js, Express, MongoDB & authentication best practices.
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            REST APIs, error handling, security & performance basics.
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Real-world features: auth, payments, dashboards & more.
+                        </li>
+                    </ul>
+                    <div class="course-card-footer">
+                        <span class="course-tagline">Best for: Full-stack roles & SaaS-style projects.</span>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="course-card">
+                    <div class="course-card-top">
+                        <div class="course-card-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="course-card-labels">
+                            <span class="course-level-badge course-level-career">Phase 4 • Career</span>
+                            <h3 class="course-card-title">Career & Portfolio Sprint</h3>
+                            <p class="course-card-subtitle">Package your skills into a portfolio that actually gets interviews.</p>
+                        </div>
+                    </div>
+                    <ul class="course-card-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            3 portfolio-ready full-stack apps with live deployment.
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            CV, LinkedIn & GitHub optimisation for tech recruiters.
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Mock interviews, coding challenges & salary negotiation prep.
+                        </li>
+                    </ul>
+                    <div class="course-card-footer">
+                        <span class="course-tagline">Best for: Landing that first real developer job.</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Plans -->
     <section class="plans" id="plans">
         <div class="container">
@@ -2638,7 +3001,7 @@
                             </div>
                             <div class="certificate-meta-pill">
                                 <i class="fas fa-shield-alt"></i>
-                                Employer verification ID
+                                Student verification ID
                             </div>
                         </div>
                     </div>
