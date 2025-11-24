@@ -2838,6 +2838,14 @@
                     <div class="product-card-price">
                         <span class="product-card-price-value">$149</span>
                         <span class="product-card-price-label">One-time payment</span>
+                        <!-- ADD THIS NEW PRICE DISCOUNT SECTION -->
+                        <div class="offer-price-row" style="justify-content: center; margin-top: 10px;">
+                            <span class="offer-price-original" style="font-size: 1.2rem;">$499</span>
+                            <span class="offer-save-chip" style="margin-left: 8px; font-size: 0.8rem; color: green;">
+                                <i class="fas fa-arrow-trend-up"></i>
+                                Save $350
+                            </span>
+                        </div>
                     </div>
                     <button class="btn btn-primary product-card-cta">
                         <i class="fas fa-bolt"></i>
@@ -2882,6 +2890,14 @@
                     <div class="product-card-price">
                         <span class="product-card-price-value">$299</span>
                         <span class="product-card-price-label">One-time payment</span>
+                        <!-- ADD THIS NEW PRICE DISCOUNT SECTION -->
+                        <div class="offer-price-row" style="justify-content: center; margin-top: 10px;">
+                            <span class="offer-price-original" style="font-size: 1.2rem;">$999</span>
+                            <span class="offer-save-chip" style="margin-left: 8px; font-size: 0.rem; color: green;">
+                                <i class="fas fa-arrow-trend-up"></i>
+                                Save $700
+                            </span>
+                        </div>
                     </div>
                     <button class="btn btn-primary product-card-cta">
                         <i class="fas fa-rocket"></i>
@@ -3541,8 +3557,19 @@
         // Video Play Button
         const playButton = document.getElementById('playButton');
         playButton.addEventListener('click', () => {
-            window.open('https://www.youtube.com/watch?v=nZ1D3syWtsA', '_blank');
+            window.open('https://www.youtube.com/watch?v=j6Ule7GXaRs&list=PLXC_gcsKLD6n7p6tHPBxsKjN5hA_quaPI', '_blank');
         });
+
+        // ADD THIS NEW CODE HERE:
+// Watch Free Lessons button scroll to video section
+const watchDemoButton = document.getElementById('watchDemo');
+if (watchDemoButton) {
+    watchDemoButton.addEventListener('click', () => {
+        document.querySelector('#course').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+}
 
         // Enrollment Buttons (scroll to pricing hero)
         const enrollButtons = document.querySelectorAll('#headerEnroll, #heroEnroll, #pricingEnroll');
