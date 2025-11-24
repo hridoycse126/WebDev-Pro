@@ -1966,7 +1966,48 @@
         .faq-icon {
             transition: var(--transition);
         }
+.product-card-feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
 
+.product-card-feature i.fa-check-circle {
+    color: var(--secondary);
+    font-size: 1.2rem;
+}
+
+.product-card-feature i.fa-times-circle {
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+/* For cross/check comparison styling */
+.feature-comparison {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.feature-check {
+    color: var(--secondary);
+    font-size: 1.2rem;
+}
+
+.feature-cross {
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+.feature-neutral {
+    color: var(--gray);
+    font-size: 1.2rem;
+    opacity: 0.7;
+}
         .faq-answer {
             padding: 0 20px;
             max-height: 0;
@@ -2834,6 +2875,23 @@
                             <i class="fas fa-check-circle"></i>
                             <span>10+ Real Frontend Projects</span>
                         </div>
+
+                        <!-- Check mark (included feature) -->
+                        <div class="product-card-feature">
+                            <i class="fas fa-times-circle feature-cross"></i>
+                            <span>Node.js, Express & MongoDB</span>
+                        </div>
+
+                        <div class="product-card-feature">
+                            <i class="fas fa-times-circle feature-cross"></i>
+                            <span>REST APIs, Authentication & Security</span>
+                        </div>
+
+                        <div class="product-card-feature">
+                            <i class="fas fa-times-circle feature-cross"></i>
+                            <span>Deployment & DevOps Basics (CI/CD)</span>
+                        </div>
+                        
                     </div>
                     <div class="product-card-price">
                         <span class="product-card-price-value">$149</span>
@@ -2868,8 +2926,21 @@
                     <div class="product-card-features">
                         <div class="product-card-feature">
                             <i class="fas fa-check-circle"></i>
-                            <span>Everything in Frontend Mastery</span>
+                            <span>HTML5, CSS3, JavaScript ES6+</span>
                         </div>
+                        <div class="product-card-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>React.js with Hooks & Context</span>
+                        </div>
+                        <div class="product-card-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Responsive Design & CSS Grid/Flexbox</span>
+                        </div>
+                        <div class="product-card-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>State Management & API Integration</span>
+                        </div>
+                        
                         <div class="product-card-feature">
                             <i class="fas fa-check-circle"></i>
                             <span>Node.js, Express & MongoDB</span>
